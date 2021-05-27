@@ -41,7 +41,7 @@ def getapps():
         try:
             if isinstance(float(result), float):
                 if apps[random_nb]['price'] == int(result):
-                    response = 'Vous avez gagné !'
+                    response = 'Félicitations ! Vous avez trouvé le juste prix !'
                 if apps[random_nb]['price'] > int(result):
                     history.append(result)
                     response = "C'est plus !"
