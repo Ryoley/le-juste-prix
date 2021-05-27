@@ -5,24 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Le Juste Prix</title>
 </head>
 
 <body>
-    <h1>Le Juste Prix</h1>
+    <h1 class="text-center py-3 font-weight-bold">Le Juste Prix</h1>
     <div class="container">
-        <div>Devinez le prix du jeu : {{getgamename}}</div>
+        <div class="text-center">Devinez le prix du jeu :<p class="py-2 font-weight-bold">{{getgamename}}</p>
+        </div>
         <form action="/" method="post">
-            <label for='number'>Le prix est {{getgameprice}}€</label><br>
             <input type="hidden" value={{random_nb}} name="random_nb">
-            <input type="text" name="number" class="form-control"><br>
-            <input type="submit" value="Valider" class="btn btn-primary">
+            <input class="form-control" type="text" name="number"><br>
+            <div class="text-center">{{response}}</div>
+            <div class="border border-light p-3 mb-4">
+                <div class="text-center">
+                    <input class="btn btn-success my-3" type="submit" value="Valider">
+                </div>
+            </div>
         </form>
-        <div>{{response}}</div>
+        <table class="table">
+            <thead class="thead-dark">
+                <th scope="col">Historique</th>
+            </thead>
+            <tbody>
+                {%for element in history%}
+                <tr>
+                    <td scope="row">{{element}} → {{messageshistory[loop.index0]}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
     </div>
+    <footer class="fixed-bottom text-center py-3">2021 © Paul Chevrier</footer>
 </body>
 
 </html>
