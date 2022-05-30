@@ -1,2 +1,3 @@
-## Le Juste Prix
-L'application peut mettre du temps à se lancer dû au fait qu'il y est beaucoup de données à traiter de l'appel à l'API. De plus, il se peut que l'application vous renvoie sur une page d'erreur du type "Internal Server Error", dans ce cas, il suffit de charger la page à nouveau.
+# 💲 The Price is Right
+## Thank you for your interest in this project. 🙏
+### The application may take a while to launch due to the fact that there is a lot of data to process from the API call. In addition, the application may send you to an error page of the type "Internal Server Error", in this case, just load the page again.
